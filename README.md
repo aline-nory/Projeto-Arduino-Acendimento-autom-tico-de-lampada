@@ -1,6 +1,6 @@
 # Iluminação inteligente: proteja você e aqueles que ama
 
-Este repositório é um projeto desenvolvido para a disciplina de Objetos inteligentes conectados da Universidade Presbiteriana Mackenzie, {TURMA 05A} 2021/2, e tem como objetivo apresentar a automação de um acendimento automático de lâmpada utilizando arduino, sensor, atuador, comunicação/controle via internet (tcp/ip) e o monitoramento via MQTT.  
+Este repositório é um projeto desenvolvido para a disciplina de Objetos inteligentes conectados da Universidade Presbiteriana Mackenzie, {TURMA 05A} 2021/2, e tem como objetivo apresentar a automação de um acionamento automático de lâmpada utilizando arduino, sensor, atuador, comunicação/controle via internet (tcp/ip) e o monitoramento via MQTT.  
 
 ## Descrição do funcionamento
 
