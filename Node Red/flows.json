@@ -1,0 +1,134 @@
+[
+    {
+        "id": "4c280ea681c6f03a",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "16e5b47d30895fdf",
+        "type": "arduino out",
+        "z": "4c280ea681c6f03a",
+        "name": "Acionamento Rele",
+        "pin": "8",
+        "state": "OUTPUT",
+        "arduino": "e7e47dc967983f1f",
+        "x": 600,
+        "y": 135,
+        "wires": []
+    },
+    {
+        "id": "8137e7283bd990e8",
+        "type": "arduino in",
+        "z": "4c280ea681c6f03a",
+        "name": "Leitura LDR",
+        "pin": "5",
+        "state": "ANALOG",
+        "arduino": "e7e47dc967983f1f",
+        "x": 100,
+        "y": 220,
+        "wires": [
+            [
+                "3b35219a59d907f9"
+            ]
+        ]
+    },
+    {
+        "id": "055cda1b26243a59",
+        "type": "function",
+        "z": "4c280ea681c6f03a",
+        "name": "",
+        "func": "if (msg.payload <  \"750\"){\n    msg.payload  = false;\n} else {\n    msg.payload = true;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 385,
+        "y": 225,
+        "wires": [
+            [
+                "d68499301f45a40e",
+                "16e5b47d30895fdf"
+            ]
+        ]
+    },
+    {
+        "id": "d68499301f45a40e",
+        "type": "mqtt out",
+        "z": "4c280ea681c6f03a",
+        "name": "",
+        "topic": "msg.payload",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "4a7d76750bc933f3",
+        "x": 535,
+        "y": 290,
+        "wires": [],
+        "l": false
+    },
+    {
+        "id": "3b35219a59d907f9",
+        "type": "delay",
+        "z": "4c280ea681c6f03a",
+        "name": "Delay",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 240,
+        "y": 135,
+        "wires": [
+            [
+                "055cda1b26243a59"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "e7e47dc967983f1f",
+        "type": "arduino-board",
+        "device": "COM4"
+    },
+    {
+        "id": "4a7d76750bc933f3",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    }
+]
